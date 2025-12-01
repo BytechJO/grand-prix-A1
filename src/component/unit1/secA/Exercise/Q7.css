@@ -1,0 +1,116 @@
+
+.q7-page-container {
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.q7qustion { 
+    font-size: 1.1rem;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+.q7qustion .qusetionnum {
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+/* --- بطاقة المحتوى الرئيسية --- */
+.q7-card {  
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem; /* تقليل الحشوة لتناسب الـ popup */
+    border: 1px solid #e5e7eb;
+}
+
+/* --- قائمة الجمل --- */
+.q7-sentences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* تقليل المسافة بين العناصر */
+}
+
+/* --- عنصر الجملة --- */
+.q7-sentence-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent; /* إطار شفاف للتحضير للتأثير */
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer; /* جعل العنصر بأكمله قابلاً للنقر */
+}
+
+/* تأثير عند مرور الماوس */
+.q7-sentence-item:hover {
+    background-color: #f7faff;
+    border-color: #dbe8ff;
+}
+
+/* حالة العنصر عند الاختيار */
+.q7-sentence-item.selected {
+    background-color: #edf5ff;
+    border-color: #a8caff;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.1);
+}
+
+/* --- زر الاختيار (Checkbox) --- */
+.q7-check-button {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid #b0c4de;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none; /* تعطيل النقر على الزر مباشرة (النقر على العنصر كله) */
+}
+
+/* حالة الزر عند الاختيار */
+.q7-sentence-item.selected .q7-check-button {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+    transform: scale(1.1); /* تأثير بسيط عند الاختيار */
+}
+
+.q7-check-icon {
+    width: 16px;
+    height: 16px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.q7-sentence-item.selected .q7-check-icon {
+    opacity: 1; /* إظهار الأيقونة بسلاسة */
+}
+
+/* --- نص الجملة --- */
+.q7-sentence-text {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: #343a40;
+    font-size: 1rem;
+    user-select: none; /* منع تحديد النص عند النقر */
+}
+
+.q7-sentence-id {
+    font-weight: 600;
+    color: #4a90e2; /* لون مميز للترقيم */
+}
+
+.q7-sentence-content {
+    flex: 1;
+}
