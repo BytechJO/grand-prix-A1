@@ -3,7 +3,7 @@ import next from "../assets/next btn.svg";
 import back from "../assets/back btn.svg";
 import Popup from "./Popup/Popup";
 import getPages from "./pageData";
-import Navbar from "./navbar"; 
+import Navbar from "./navbar";
 import Footer from "./footer";
 
 export default function Book() {
@@ -12,11 +12,11 @@ export default function Book() {
   const [activeTab, setActiveTab] = useState("student");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
-  const [viewMode, setViewMode] = useState("spread"); 
+  const [viewMode, setViewMode] = useState("spread");
 
   const [isPanning, setIsPanning] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1100);
@@ -43,19 +43,23 @@ export default function Book() {
       setPageIndex(unitStartIndex);
     }
   };
-  const [globalPopupOpen, setGlobalPopupOpen] = useState(false);
-  const [globalPopupContent, setGlobalPopupContent] = useState(null);
-  const [globalPopupAudio, setGlobalPopupAudio] = useState(false);
+  const [popupData, setPopupData] = useState({
+    content: null,
+    questionText: "",
+    audioSrc: null
+  });
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const openPopup = (content, isAudio = false) => {
-    setGlobalPopupContent(content);
-    setGlobalPopupAudio(isAudio);
-    setGlobalPopupOpen(true);
+
+  const openPopup = ({ content, questionText, audioSrc }) => {
+    setPopupData({ content, questionText, audioSrc });
+    setIsPopupOpen(true);
   };
 
+
+
   const closePopup = () => {
-    setGlobalPopupOpen(false);
-    setGlobalPopupContent(null);
+    setIsPopupOpen(false);
   };
 
   const pages = getPages({ goToUnit, openPopup });
@@ -202,8 +206,8 @@ export default function Book() {
                           zoom === 1
                             ? "default"
                             : isDragging
-                            ? "grabbing"
-                            : "grab",
+                              ? "grabbing"
+                              : "grab",
                       }}
                     >
                       <div className="max-w-full max-h-full flex justify-center items-center">
@@ -262,8 +266,8 @@ export default function Book() {
                           zoom === 1
                             ? "default"
                             : isDragging
-                            ? "grabbing"
-                            : "grab",
+                              ? "grabbing"
+                              : "grab",
                       }}
                     >
                       <div className="flex justify-center items-center border-r">
@@ -311,12 +315,16 @@ export default function Book() {
       </div>
 
       <Popup
-        isOpen={globalPopupOpen}
+        isOpen={isPopupOpen}
         onClose={closePopup}
-        isAudio={globalPopupAudio}
+        questionText={popupData.questionText}
+        audioSrc={popupData.audioSrc}
+        isAudio={!!popupData.audioSrc}
       >
-        {globalPopupContent}
+        {popupData.content}
       </Popup>
+
+
     </>
   );
 }

@@ -1,0 +1,18 @@
+#u1saq1btn,
+#u1saq2btn
+{
+  position: absolute;
+  background-color: transparent;
+  width: 7%;
+  height: 4%;
+  cursor: pointer;
+}
+
+#u1saq1btn{
+  top: 16%;
+  left: 7%;
+}
+#u1saq2btn{
+  top: 60%;
+  left: 7%;
+}

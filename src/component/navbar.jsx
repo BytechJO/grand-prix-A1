@@ -19,7 +19,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 <img
                     src={logo}
                     alt="J1 Logo"
-                    style={{ height: "40px", width: "100px", background: "blueviolet" }}
+                    style={{ height: "40px", width: "100px" }}
                 />
 
                 {/* TABS */}

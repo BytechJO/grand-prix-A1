@@ -1,7 +1,7 @@
 .greeting-exercise {
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  direction: ltr; 
+  direction: ltr;
   text-align: center;
   padding: 20px;
 }
@@ -9,8 +9,7 @@
 .exercise-container1 {
   margin: 0 auto;
   border-radius: 15px;
-  padding: 35px;
-  height: 650px;
+
 }
 
 .situations-list {
@@ -82,38 +81,15 @@
   align-items: center;
   gap: 15px;
   flex-wrap: nowrap;
-  top: 10%;
 }
 
-.btn-check1 {
-  position: absolute;
-  left: 60%;
-  width: 25%;
-  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-  color: white;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s;
-}
 
-.btn-check1:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
-}
-
-.btn-check1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
 
 .btn-reset1 {
   position: absolute;
-  width: 25%;
   left: 15%;
+  width: 20%;
+  top: 100%;
   background: #ff9800;
   color: white;
   padding: 12px 25px;
@@ -121,7 +97,7 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
 }
 
@@ -131,12 +107,34 @@
   box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
 }
 
+.btn-check1 {
+  position: absolute;
+  left: 60%;
+  width: 20%;
+  top: 100%;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.btn-check1:hover {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
+}
+
+
+
 .qustion1 {
   font-size: x-large;
   text-align: left;
 }
 
-/* Tablet Screens (481px - 768px) */
 @media (max-width: 768px) {
   .greeting-exercise {
     width: 100%;
@@ -178,17 +176,10 @@
 
   .control-buttons1 {
     position: static;
-    margin-top: 25px;
     gap: 12px;
   }
 
-  .btn-check1,
-  .btn-reset1 {
-    position: static;
-    width: 48%;
-    max-width: none;
-    padding: 12px 20px;
-  }
+
 }
 
 /* Mobile Screens (max-width: 480px) */
@@ -234,16 +225,6 @@
     position: static;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
-  }
-
-  .btn-check1,
-  .btn-reset1 {
-    position: static;
-    width: 100%;
-    max-width: none;
-    padding: 12px 20px;
-    font-size: 1rem;
   }
 }
 
@@ -279,9 +260,4 @@
     padding: 8px 10px;
   }
 
-  .btn-check1,
-  .btn-reset1 {
-    padding: 10px 15px;
-    font-size: 0.95rem;
-  }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Q2.css';
-import ValidationAlert from "./ValidationAlert";
+import ValidationAlert from "../../../Popup/ValidationAlert";
 
 const initialSituations = [
     { id: 1, text: 'Un(e) ami(e) proche', correct: 'La bise', userGuess: null, isCorrect: null },
@@ -26,22 +26,22 @@ const Q2 = () => {
     };
 
     const checkAnswers = () => {
-  const checkedSituations = situations.map(s => ({
-    ...s,
-    isCorrect: s.userGuess === s.correct,
-  }));
-  setSituations(checkedSituations);
-  setShowFeedback(true);
+        const checkedSituations = situations.map(s => ({
+            ...s,
+            isCorrect: s.userGuess === s.correct,
+        }));
+        setSituations(checkedSituations);
+        setShowFeedback(true);
 
-  const correctCount = checkedSituations.filter(s => s.isCorrect).length;
-  const allCorrect = correctCount === situations.length;
+        const correctCount = checkedSituations.filter(s => s.isCorrect).length;
+        const allCorrect = correctCount === situations.length;
 
-  if(allCorrect){
-    ValidationAlert.success("Good Job!", "You got all answers right!", `${correctCount}/${situations.length}`);
-  } else {
-    ValidationAlert.error("Try Again!", "Some answers are incorrect.", `${correctCount}/${situations.length}`);
-  }
-};
+        if (allCorrect) {
+            ValidationAlert.success("Good Job!", "You got all answers right!", `${correctCount}/${situations.length}`);
+        } else {
+            ValidationAlert.error("Try Again!", "Some answers are incorrect.", `${correctCount}/${situations.length}`);
+        }
+    };
 
 
     const resetExercise = () => {
@@ -59,11 +59,11 @@ const Q2 = () => {
             <div className="greeting-exercise">
                 <div className="exercise-container1">
                     <div className="qustion1">
-                <h5>
-                    <span className="qusetionnum">2.</span>
-                    Je serre la main ou je fais la bise?
-                </h5>
-            </div>
+                        <h5>
+                            <span className="qusetionnum">2.</span>
+                            Je serre la main ou je fais la bise?
+                        </h5>
+                    </div>
                     <div className="situations-list">
                         {situations.map(situation => (
                             <div key={situation.id} className="situation-card">
@@ -91,29 +91,26 @@ const Q2 = () => {
                         ))}
                     </div>
 
-                    <div className="control-buttons1">
-                        <button
-                            className="btn btn-check1"
-                            onClick={checkAnswers}
-                            disabled={!allAnswered || showFeedback}
-                        >
-                            Vérifier ✓
-                        </button>
 
-                        <button
-                            className="btn btn-reset1"
-                            onClick={resetExercise}
-                        >
-                            Essayer ↻
-                        </button>
-                    </div>
 
-                    {/* {showFeedback && (
-                        allCorrect
-                            ? ValidationAlert.success("Good Job!", "You got all answers right!")
-                            : ValidationAlert.error("Try Again!", "Some answers are incorrect.")
-                    )} */}
                 </div>
+
+            </div>
+            <div className="control-buttons1">
+                <button
+                    className="btn btn-check1"
+                    onClick={checkAnswers}
+                    disabled={!allAnswered || showFeedback}
+                >
+                    Vérifier ✓
+                </button>
+
+                <button
+                    className="btn btn-reset1"
+                    onClick={resetExercise}
+                >
+                    Essayer ↻
+                </button>
             </div>
         </>
     );

@@ -1,4 +1,4 @@
-/*================ CONTAINER ================*/
+
 .audio-popup {
   background: #ffffff;
   padding: 20px;
@@ -21,7 +21,6 @@
   transform: translateX(-50%);
   z-index: 9999;
 }
-/*================ TOP ROW ================*/
 .top-row {
   display: flex;
   align-items: center;
@@ -54,7 +53,6 @@
   border-radius: 50%;
 }
 
-/*================ BOTTOM ROW (BUTTONS) ================*/
 .bottom-row {
   display: flex;
   justify-content: space-between;
@@ -65,7 +63,6 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  /* border: 2px solid #7d55ff; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +114,6 @@
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-/*================ CAPTION POPUP ================*/
 .caption-popup {
   position: absolute;
   top: 60px;
@@ -144,7 +140,6 @@
   padding: 3px;
 }
 
-/* Scroll */
 .caption-popup::-webkit-scrollbar {
   width: 6px;
 }
@@ -153,7 +148,6 @@
   border-radius: 5px;
 }
 
-/*================ SETTINGS POPUP ================*/
 .settings-wrapper {
   position: relative;
 }
@@ -180,8 +174,6 @@
 }
 
 .caption-box p {
-  /* margin: 0 0 8px; */
-  /* padding: 6px 10px; */
   border-radius: 6px;
   transition: background 0.3s;
 }
@@ -200,7 +192,6 @@
   outline: none;
 }
 
-/* دائرة السلايدر */
 .audio-slider::-webkit-slider-thumb {
   appearance: none;
   width: 14px;

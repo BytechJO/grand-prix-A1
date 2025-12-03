@@ -25,6 +25,7 @@ const getPages = ({ goToUnit, openPopup }) => [
   <Page5 bgImage={img5} openPopup={openPopup} />,
   <Page6 bgImage={img6} openPopup={openPopup} />,
   <Page7 bgImage={img7} openPopup={openPopup} />,
+  
 ];
 
 
